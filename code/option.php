@@ -152,28 +152,25 @@ form input[type="submit"]:hover{
 </head>
 <body>
   <div class="wrapper">
-    <header>Login Form</header>
-    <form method="post" action="logprocess.php" enctype="multipart/form-data">
-      <div class="field mail">
+    <header>Join As</header>
+    <form method="post" action="" enctype="multipart/form-data">
+      <div class="field stdnt">
         <div class="input-area">
-          <input type="text" placeholder="Email Address">
+        <input type="submit" value="Student">
           <i class="icon fas fa-envelope"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
         <div class="error error-txt">Email can't be blank</div>
       </div>
-      <div class="field password">
+      <div class="field fac">
         <div class="input-area">
-          <input type="password" placeholder="Password">
+        <input type="submit" value="Teacher">
           <i class="icon fas fa-lock"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
-        <div class="error error-txt">Password can't be blank</div>
-      </div>
-      <div class="pass-txt"><a href="#">Forgot password?</a></div>
-      <input type="submit" value="Login">
+        
     </form>
-    <div class="sign-txt">Not yet member? <a href="reg.php">Signup now</a></div>
+    
   </div>
 </body>
 </html>

@@ -117,25 +117,12 @@ form .rpswd i {
   </head>
   <body>
   <form method="POST" action="regprocess.php">
-      <h2>Register</h2>
-      <div class="form-group rfullname">
-        <label for="rfullname">Full name</label>
-        <input type="text" id="rfullname" placeholder="Enter your full name">
+      <h2>Faculty Details</h2>
+      <div class="form-group fname">
+        <label for="fname">Full name</label>
+        <input type="text" id="fname" placeholder="Enter your full name">
       </div>
-      <div class="form-group rmail">
-        <label for="rmail">Email Address</label>
-        <input type="text" id="rmail" placeholder="Enter your email address">
-      </div>
-      <div class="form-group rpswd">
-        <label for="rpswd">Password</label>
-        <input type="password" id="rpswd" placeholder="Enter your password">
-        <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
-      </div>
-      <div class="form-group rdob">
-        <label for="rdob">Birth Date</label>
-        <input type="date" id="rdob" placeholder="Select your date">
-      </div>
-      <div class="form-group rgender">
+      <div class="form-group fgender">
         <label for="rgender">Gender</label>
         <select id="rgender">
           <option value="" selected disabled>Select your gender</option>
@@ -144,6 +131,32 @@ form .rpswd i {
           <option value="Other">Other</option>
         </select>
       </div>
+      <div class="form-group fqualification">
+        <label for="rmail">Qualification</label>
+        <input type="text" id="fqualification" placeholder="Enter your qualification">
+      </div>
+      <div class="form-group faddress">
+        <label for="rmail">Address</label>
+        <input type="text" id="faddress" placeholder="Enter your address">
+      </div>
+      <div class="form-group fdoj">
+        <label for="fdoj">Date of join</label>
+        <input type="date" id="fdoj" placeholder="Select date">
+      </div>
+      <div class="form-group fmail">
+        <label for="fmail">Email Address</label>
+        <input type="text" id="fmail" placeholder="Enter your email address">
+      </div>
+      <div class="form-group fage">
+        <label for="fage">Password</label>
+        <input type="text" id="fage" placeholder="Enter your age">
+      </div>
+      <div class="form-group fcontact">
+        <label for="fcontact">Password</label>
+        <input type="text" id="fcontact" placeholder="Enter contact number">
+      </div>
+      
+      
       <div class="form-group submit-btn">
         <input type="submit" value="Submit">
       </div>
@@ -155,8 +168,8 @@ form .rpswd i {
 
 // Selecting form and input elements
 const form = document.querySelector("form");
-const passwordInput = document.getElementById("rpswd");
-const passToggleBtn = document.getElementById("pass-toggle-btn");
+//const passwordInput = document.getElementById("rpswd");
+//const passToggleBtn = document.getElementById("pass-toggle-btn");
 
 // Function to display error messages
 const showError = (field, errorText) => {
@@ -172,7 +185,7 @@ const handleFormData = (e) => {
     e.preventDefault();
 
     // Retrieving input elements
-    const fullnameInput = document.getElementById("rfullname");
+    const fullnameInput = document.getElementById("fname");
     const emailInput = document.getElementById("rmail");
     const dateInput = document.getElementById("rdob");
     const genderInput = document.getElementById("rgender");

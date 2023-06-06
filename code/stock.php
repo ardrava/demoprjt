@@ -117,33 +117,28 @@ form .rpswd i {
   </head>
   <body>
   <form method="POST" action="regprocess.php">
-      <h2>Register</h2>
+      <h2>Stock</h2>
       <div class="form-group rfullname">
-        <label for="rfullname">Full name</label>
-        <input type="text" id="rfullname" placeholder="Enter your full name">
+        <label for="rfullname">Stock_ID</label>
+        <input type="text" id="rfullname" placeholder="Enter stock id">
       </div>
       <div class="form-group rmail">
-        <label for="rmail">Email Address</label>
-        <input type="text" id="rmail" placeholder="Enter your email address">
+        <label for="rmail">Stock_Name</label>
+        <input type="text" id="rmail" placeholder="Enter stock name">
       </div>
-      <div class="form-group rpswd">
-        <label for="rpswd">Password</label>
-        <input type="password" id="rpswd" placeholder="Enter your password">
-        <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
+      <div class="form-group rmail">
+        <label for="rmail">Quantity</label>
+        <input type="text" id="rmail" placeholder="Enter quantity">
       </div>
-      <div class="form-group rdob">
-        <label for="rdob">Birth Date</label>
-        <input type="date" id="rdob" placeholder="Select your date">
+      <div class="form-group dos">
+        <label for="dos">Date_Of_Stock</label>
+        <input type="date" id="dos" placeholder="Select date of stock">
       </div>
-      <div class="form-group rgender">
-        <label for="rgender">Gender</label>
-        <select id="rgender">
-          <option value="" selected disabled>Select your gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
+      <div class="form-group sdoi">
+        <label for="sdoi">Date_Of_Issue</label>
+        <input type="date" id="sdoi" placeholder="Select date of issue">
       </div>
+      
       <div class="form-group submit-btn">
         <input type="submit" value="Submit">
       </div>

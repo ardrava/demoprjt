@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -116,36 +116,52 @@ form .rpswd i {
    </style>
   </head>
   <body>
-  <form method="POST" action="regprocess.php">
-      <h2>Register</h2>
-      <div class="form-group rfullname">
-        <label for="rfullname">Full name</label>
-        <input type="text" id="rfullname" placeholder="Enter your full name">
+  <form method="POST" action="">
+      <h2>Student Details</h2>
+      <div class="form-group sname">
+        <label for="sname">Student Name</label>
+        <input type="text" id="sname" placeholder="Enter your full name">
       </div>
-      <div class="form-group rmail">
-        <label for="rmail">Email Address</label>
-        <input type="text" id="rmail" placeholder="Enter your email address">
+      <div class="form-group sdob">
+        <label for="sdob">Birth Date</label>
+        <input type="date" id="sdob" placeholder="Select your date">
       </div>
-      <div class="form-group rpswd">
-        <label for="rpswd">Password</label>
-        <input type="password" id="rpswd" placeholder="Enter your password">
-        <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
-      </div>
-      <div class="form-group rdob">
-        <label for="rdob">Birth Date</label>
-        <input type="date" id="rdob" placeholder="Select your date">
-      </div>
-      <div class="form-group rgender">
-        <label for="rgender">Gender</label>
-        <select id="rgender">
+      <div class="form-group sgender">
+        <label for="sgender">Gender</label>
+        <select id="sgender">
           <option value="" selected disabled>Select your gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
         </select>
       </div>
+      <div class="form-group saddress">
+        <label for="sadress">Address</label>
+        <input type="text" id="saddress" placeholder="Enter your address">
+      </div>
+      </div>
+      <div class="form-group scenter">
+        <label for="scenter">Email</label>
+        <input type="text" id="scenter" placeholder="Enter your Email">
+        
+      </div>
+
+      
+      <div class="form-group sguardian">
+        <label for="sguardian">Guardian</label>
+        <input type="text" id="sguardian" placeholder="Enter your guardian">
+        
+      </div>
+      <div class="form-group scontact">
+        <label for="scontact">Contact</label>
+        <input type="text" id="scontact" placeholder="Enter your contact">
+        
+     
+      
+      
       <div class="form-group submit-btn">
         <input type="submit" value="Submit">
+      
       </div>
     </form>
 
@@ -155,8 +171,8 @@ form .rpswd i {
 
 // Selecting form and input elements
 const form = document.querySelector("form");
-const passwordInput = document.getElementById("rpswd");
-const passToggleBtn = document.getElementById("pass-toggle-btn");
+//const passwordInput = document.getElementById("rpswd");
+//const passToggleBtn = document.getElementById("pass-toggle-btn");
 
 // Function to display error messages
 const showError = (field, errorText) => {
@@ -172,20 +188,25 @@ const handleFormData = (e) => {
     e.preventDefault();
 
     // Retrieving input elements
-    const fullnameInput = document.getElementById("rfullname");
-    const emailInput = document.getElementById("rmail");
-    const dateInput = document.getElementById("rdob");
-    const genderInput = document.getElementById("rgender");
+    const fullnameInput = document.getElementById("sname");
+    const dateInput = document.getElementById("sdob");
+    const genderInput = document.getElementById("sgender");
+    const addressInput = document.getElementById("saddress");
+    const centerInput = document.getElementById("scenter");
+    const guardianInput = document.getElementById("sguardian");
+    const contactInput = document.getElementById("scontact");
 
     // Getting trimmed values from input fields
     const fullname = fullnameInput.value.trim();
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-    const date = dateInput.value;
-    const gender = genderInput.value;
+    const date = dateInput.value.trim();
+    const gender = genderInput.value.trim();
+    const address = addressInput.value;
+    const center =centerInput.value;
+    const guardian =guardianInput.value;
+    const contact =contactInput.value;
 
     // Regular expression pattern for email validation
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    //const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
     // Clearing previous error messages
     document.querySelectorAll(".form-group .error").forEach(field => field.classList.remove("error"));
@@ -195,17 +216,23 @@ const handleFormData = (e) => {
     if (fullname === "") {
         showError(fullnameInput, "Enter your full name");
     }
-    if (!emailPattern.test(email)) {
-        showError(emailInput, "Enter a valid email address");
-    }
-    if (password === "") {
-        showError(passwordInput, "Enter your password");
-    }
     if (date === "") {
         showError(dateInput, "Select your date of birth");
     }
     if (gender === "") {
         showError(genderInput, "Select your gender");
+    }
+    if (address === "") {
+        showError(addressInput, "Enter your address");
+    }
+    if (center === "") {
+        showError(centerInput, "Enter center code");
+    }
+    if (guardian === "") {
+        showError(guardianInput, "Enter your guardian");
+    }
+    if (contact === "") {
+        showError(contactInput, "Enter your contact");
     }
 
     // Checking for any remaining errors before form submission
@@ -217,9 +244,9 @@ const handleFormData = (e) => {
 }
 
 // Toggling password visibility
-passToggleBtn.addEventListener('click', () => {
-    passToggleBtn.className = passwordInput.type === "password" ? "fa-solid fa-eye-slash" : "fa-solid fa-eye";
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+//passToggleBtn.addEventListener('click', () => {
+   // passToggleBtn.className = passwordInput.type === "password" ? "fa-solid fa-eye-slash" : "fa-solid fa-eye";
+    //passwordInput.type = passwordInput.type === "password" ? "text" : "password";
 });
 
 // Handling form submission event
